@@ -6,6 +6,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
+      {{#if user}}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white-50" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Links
@@ -15,6 +16,20 @@
           <a class="dropdown-item" href="/links/add">Add</a>
         </div>
       </li>
+            <li class="nav-item">
+        <a class="nav-link text-white-50" href="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white-50" href="/logout">Logout {{user.username}}</a>
+      </li>
+      {{else}}
+      <li class="nav-item">
+        <a class="nav-link text-white-50" href="/signup">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white-50" href="/signin">Signin</a>
+      </li>
+      {{/if}}
     </ul>
   </div>
 </div>
